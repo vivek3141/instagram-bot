@@ -1,0 +1,4 @@
+*.txt
+*.checkpoint
+*.log
+config
