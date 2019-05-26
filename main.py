@@ -3,7 +3,8 @@ import sys
 import os
 
 sys.path.append(os.path.join(sys.path[0], '../'))
-
+args = {i.split(":")[0]:i.split(":")[1] for i in open("config").read().strip().split("\n")}
+print(args)
 
 bot = Bot(filter_private_users=False, filter_users_without_profile_photo=False,
           max_follows_per_day=1000, min_media_count_to_follow=0, follow_delay=3) # Play around with these settings
