@@ -10,11 +10,13 @@ args = {i.split(":")[0]: i.split(":")[1]
 bot = Bot(
     filter_private_users=False,
     filter_users_without_profile_photo=False,
-    max_follows_per_day=1000,
+    max_follows_per_day=100000,
     min_media_count_to_follow=0,
-    follow_delay=3
+    follow_delay=0,
+    min_followers_to_follow=100
 )  # Play around with these settings
 bot.login(username=args['username'], password=args['password'])
 
 for username in eval(args['users']):
-    bot.follow_following(username)
+    bot.follow_followers(username)
+#	print(username)
