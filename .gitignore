@@ -4,3 +4,4 @@
 config
 pw.config
 *.json
+.vscode/
