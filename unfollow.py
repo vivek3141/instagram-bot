@@ -23,6 +23,6 @@ print(len(followers))
 
 for i in following:
     if not i in followers:
-        if i == '19106184184':
+        if i in args['exceptions']:
             continue
         bot.unfollow(i)

@@ -1,3 +1,4 @@
 username:<username>
 password:<password>
 users:['user1', 'user2']
+exceptions:['id1', 'id2']
