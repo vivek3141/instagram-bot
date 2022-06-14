@@ -17,12 +17,19 @@ bot.login(username=args['username'], password=args['password'])
 
 followers = bot.followers
 following = bot.following
-print(len(following))
-print(len(followers))
+print("=" * 20)
+print(f"# following: {len(following)}")
+print(f"# followers: {len(followers)}")
+print("=" * 20)
 
-
+to_unfollow = []
 for i in following:
     if not i in followers:
         if i in args['exceptions']:
             continue
-        bot.unfollow(i)
+        to_unfollow.append(i)
+
+print(f"# to unfollow: {len(to_unfollow)}")
+
+for i in to_unfollow:
+    bot.unfollow(i)
